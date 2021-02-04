@@ -7,6 +7,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    font-size: 93.75%; /*mesma coisa que 15px*/
+}
 body{
     background: #f0f2f5;
     font-family: 'Poppins', sans-serif;
@@ -15,6 +18,18 @@ body{
     width: min(90vw, 800px);
     margin: auto;
 }
+/*sr-only - propriedade para ocultar um texto em um h2 sem afetar motores de busca para pessoas com deficiência visual*/
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
 /*Title ========================================*/
 h2{
     margin-top: 3.2rem;
@@ -22,6 +37,20 @@ h2{
     color:var(--dark-blue);
     font-weight: normal;
 }
+
+/*Links and Buttons ========================================*/
+a{
+    color: #49aa26;
+    text-decoration: none;
+}
+.button.new{
+    display: inline-block;
+    margin-bottom: 0.8rem;  
+}
+a:hover{
+    color: #3dd705;
+}
+
 /*Header ========================================*/
 header{
 background: #2d4a22;
@@ -67,6 +96,9 @@ font-weight: 100;
 .card h3{
 font-weight: normal;
 font-size: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;/*espaço entre - isso que significa o space-between*/
 }
 
 .card p{
@@ -80,9 +112,11 @@ margin-top: 1rem;
 }
 /*Table ======================================*/
 #data-table{
+    display: block;
     width: 100%;
     border-spacing: 0 0.5rem;
     color: #969cb3;
+    overflow-x: auto;/*muito util isso para criar uma barra de rolagem no mobile*/
 }
 table thead th{
     background: white;
@@ -100,6 +134,10 @@ table tbody tr td:first-child{
     -moz-border-radius: 0.25rem 0 0 0.25rem;
     -ms-border-radius: 0.25rem 0 0 0.25rem;
     -o-border-radius: 0.25rem 0 0 0.25rem;
+}
+table thead tr th:last-child,
+table tbody tr td:last-child{
+border-radius: 0 0.25rem  0.25rem 0;
 }
 table tbody tr {
     opacity: 0.7;
@@ -132,4 +170,17 @@ footer{
     color: var(--dark-blue);
     opacity: 0.6;
 
+}
+
+/*Responsive ======================================*/
+
+@media (min-width: 800px) {
+    html{
+        font-size: 87.5%;
+    }
+    #balance{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) ;
+        gap: 2rem;
+    }
 }
