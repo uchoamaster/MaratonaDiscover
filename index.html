@@ -49,7 +49,7 @@
         </section>
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
-            <a href="#" class="button new">+ Nova Transação</a>
+            <a href="#" class="button new" onclick="Modal.open()">+ Nova Transação</a>
             <table id="data-table">
                 <thead>
                     <tr>
@@ -91,7 +91,7 @@
 
     </main>
 
-    <div class="modal-overlay active">
+    <div class="modal-overlay ">
         <div class="modal">
             <div class="modal-content">
                 <div id="form">
@@ -126,6 +126,19 @@
     <footer>
         <p>dev.finance$</p>
     </footer>
+    <script>
+        Modal = {
+            open(){
+                //Abrir Modal
+                //Adicionar a class active ao modal
+                alert("Abri o Modal!!")
+            },
+            close(){
+                //Fechar o Modal
+            }   //remover a class active do modal
+        }
+
+    </script>
 </body>
 
 </html>
